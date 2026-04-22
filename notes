@@ -1,0 +1,12 @@
+state is a built in react object used to store data or information about the component . when state changes , the component re-renders automatically
+if you want to modify the state variable here comes 2nd parameter called setlist
+
+Reconcilation algorithm (React fiber)
+
+reconcilation algorithm is the process used by react to comapare the old virtual DOM with new virtual DOM and update only the changed parts in thr real DOM for better performance.
+
+React uses Reconcilation algorithm to efficiently update UI by comparing oid and new virtual DOM using Diffing algorithm. 
+ 
+ real DOM is created by the browser from HTML elements. it directly updates the UI , but frequent updates make it slower.
+
+virtual DOM is a lightweight javascript copy of Actual DOM that improves performance by updating only changed parts instead of re-rendering the whole page.

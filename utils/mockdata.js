@@ -5,63 +5,14 @@ const reslist = [
       name: "MOJO Pizza - 2X Toppings",
       cloudinaryImageId:
         "RX_THUMBNAIL/IMAGES/VENDOR/2024/12/12/8f8c4818-ff0b-4471-97d7-a0ac9525c28e_686214.jpg",
-      locality: "Brookefield",
-      areaName: "Kundalhalli",
       costForTwo: "₹250 for two",
       cuisines: ["Pizzas", "Italian", "Fast Food", "Desserts"],
       avgRating: 4.5,
       parentId: "11329",
       avgRatingString: "4.5",
-      totalRatingsString: "1.5K+",
       sla: {
         deliveryTime: 25,
-        lastMileTravel: 1.5,
-        serviceability: "SERVICEABLE",
-        slaString: "20-30 mins",
-        lastMileTravelString: "1.5 km",
-        iconType: "ICON_TYPE_EMPTY",
       },
-      availability: {
-        nextCloseTime: "2026-04-22 02:00:00",
-        opened: true,
-      },
-      badges: {},
-      isOpen: true,
-      type: "F",
-      badgesV2: {
-        entityBadges: {
-          imageBased: {},
-          textBased: {},
-          textExtendedBadges: {},
-        },
-      },
-      aggregatedDiscountInfoV3: {
-        header: "ITEMS",
-        subHeader: "AT ₹99",
-      },
-      differentiatedUi: {
-        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-        differentiatedUiMediaDetails: {
-          lottie: {},
-          video: {},
-        },
-      },
-      reviewsSummary: {},
-      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-      restaurantOfferPresentationInfo: {},
-      externalRatings: {
-        aggregatedRating: {
-          rating: "--",
-        },
-      },
-      ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY",
-    },
-    analytics: {
-      context: "seo-data-e54a436a-98ae-4c4b-aa61-deb6f9da7793",
-    },
-    cta: {
-      link: "https://www.swiggy.com/city/bangalore/mojo-pizza-2x-toppings-brookefield-kundalhalli-rest686214",
-      type: "WEBLINK",
     },
   },
   {
