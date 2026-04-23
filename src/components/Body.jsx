@@ -1,75 +1,64 @@
 import RestaurantCard from "./RestaurantCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import reslist from "../../utils/mockdata";
+import Shimmer from "./Shimmer";
 const Body = () => {
-  const [ListOfRestaurants, setListOfRestaurant] = useState([
-    {
-      info: {
-        id: "686214",
-        name: "pizza hutt",
-        cloudinaryImageId:
-          "RX_THUMBNAIL/IMAGES/VENDOR/2024/12/12/8f8c4818-ff0b-4471-97d7-a0ac9525c28e_686214.jpg",
+  const [ListOfRestaurants, setListOfRestaurants] = useState([]);
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
-        costForTwo: "₹250 for two",
-        cuisines: ["Pizzas", "Italian", "Fast Food", "Desserts"],
-        avgRating: 3.8,
-        parentId: "11329",
-        avgRatingString: "3.8",
+  const [SearchText, setSearchText] = useState("");
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-        sla: {
-          deliveryTime: 25,
-        },
-      },
-    },
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.61&lng=77.20&page_type=DESKTOP_WEB_LISTING",
+    );
+    const json = await data.json();
+    const res =
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants;
+    setListOfRestaurants(res);
+    console.log(`ListOfRestaurants ${JSON.stringify(res, null, 2)}`);
+      setFilteredRestaurants(res);
+  };
 
-    {
-      info: {
-        id: "686216",
-        name: "pizza point",
-        cloudinaryImageId:
-          "RX_THUMBNAIL/IMAGES/VENDOR/2024/12/12/8f8c4818-ff0b-4471-97d7-a0ac9525c28e_686214.jpg",
-
-        costForTwo: "₹250 for two",
-        cuisines: ["Pizzas", "Italian", "Fast Food", "Desserts"],
-        avgRating: 4.2,
-        parentId: "11329",
-        avgRatingString: "4.2",
-
-        sla: {
-          deliveryTime: 25,
-        },
-      },
-    },
-    {
-      info: {
-        id: "686215",
-        name: "pizza house",
-        cloudinaryImageId:
-          "RX_THUMBNAIL/IMAGES/VENDOR/2024/12/12/8f8c4818-ff0b-4471-97d7-a0ac9525c28e_686214.jpg",
-
-        costForTwo: "₹250 for two",
-        cuisines: ["Pizzas", "Italian", "Fast Food", "Desserts"],
-        avgRating: 4.5,
-        parentId: "11329",
-        avgRatingString: "4.5",
-
-        sla: {
-          deliveryTime: 25,
-        },
-      },
-    },
-  ]);
-  return (
+  return ListOfRestaurants.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="Body">
       <div className="filter">
+        <div className="search">
+          <input
+            type="text"
+            className="search-box"
+            value={SearchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          />
+          <button>
+            onClick=
+            {() => {
+              console.log(SearchText);
+              const filteredRestaurant = ListOfRestaurants.filter(
+                (res) => res.info.name.toLowerCase().includes( SearchText.toLocaleLowerCase()),
+              );
+              setFilteredRestaurants(filteredRestaurant);
+            }}{" "}
+            search
+          </button>
+        </div>
+
         <button
           className="filter-btn"
           onClick={() => {
             const filteredList = ListOfRestaurants.filter(
-              (res) => res.info.avgRating > 4,
+              (res) => res.info.avgRating > 4.5,
             );
-            setListOfRestaurant(filteredList);
-            console.log("Filtered Restaurants:", ListOfRestaurants);
+            setListOfRestaurants(filteredList);
+            console.log("Filtered Restaurants:", filteredList);
           }}
         >
           Top Rated Restaurants
@@ -77,8 +66,8 @@ const Body = () => {
       </div>
 
       <div className="restaurant-container">
-        {ListOfRestaurants.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resObj={restaurant} />
+        {filteredRestaurants.map((restaurant) => (
+          <RestaurantCard key={restaurant?.info?.id} resObj={restaurant} />
         ))}
       </div>
     </div>

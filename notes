@@ -1,12 +1,45 @@
 state is a built in react object used to store data or information about the component . when state changes , the component re-renders automatically
-if you want to modify the state variable here comes 2nd parameter called setlist
+
+if you want to modify the state variable here comes 2nd parameter called setlist.
 
 Reconcilation algorithm (React fiber)
 
 reconcilation algorithm is the process used by react to comapare the old virtual DOM with new virtual DOM and update only the changed parts in thr real DOM for better performance.
 
-React uses Reconcilation algorithm to efficiently update UI by comparing oid and new virtual DOM using Diffing algorithm. 
- 
- real DOM is created by the browser from HTML elements. it directly updates the UI , but frequent updates make it slower.
+React uses Reconcilation algorithm to efficiently update UI by comparing oid and new virtual DOM using Diffing algorithm.
+
+real DOM is created by the browser from HTML elements. it directly updates the UI , but frequent updates make it slower.
 
 virtual DOM is a lightweight javascript copy of Actual DOM that improves performance by updating only changed parts instead of re-rendering the whole page.
+
+- monolith arcitecture
+
+* Monolith architecture is a software design where all components of an application are built and deployed as a single unit.
+
+- microservices
+
+* microservices architecture is a design where an application is built as a collection of small independent services that communicate through APIs.
+
+- there are two important hooks in React-
+  -1. usestate
+ - useState lets your component “remember” things and update them.
+-When you update the state, your component refreshes to show the new info.
+"Think of useState like a notepad for your component. You write something down (the state), and whenever you change it, React reads the new note and updates what you see!"
+
+2. useEffect
+- useEffect lets you tell React to do something extra after rendering.
+It’s perfect for things like fetching data, timers, or connecting to outside systems.
+
+"Think of useEffect like a “to-do list” for React. After React finishes drawing your component, it checks the list and does whatever you wrote in useEffect!"
+
+CORS policy
+- CORS stands for Cross-Origin Resource Sharing.
+It’s a security rule used by web browsers.
+- CORS is like a security guard for your browser.
+It only lets your website talk to other websites if those websites say it’s okay.
+* What is Shimmer UI?
+Shimmer UI is a special loading effect you see on websites and apps.
+It shows a moving, shiny animation (like a light passing over a grey box) while real content is still loading.
+Shimmer UI is a fancy placeholder that shows up while your real data is loading.
+It keeps users happy by showing them something is happening, instead of just making them wait.
+* Whenever state variable update, react triggers a reconciliation cycle(re-renders the component)

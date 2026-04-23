@@ -2,11 +2,11 @@ import { CDN_URL } from "../../utils/commom.js";
 
 const RestaurantCard = (props) => {
   const { resObj } = props;
-  console.log("resData in RestaurantCard:", resObj);
+  console.log("resData in RestaurantCard:", resObj.info.id);
   const name = resObj?.info?.name;
   const avgRating = resObj.info?.avgRating;
   const deliveryTime = resObj.info?.sla.deliveryTime;
-  const cuisines = resObj.info?.cuisines;
+  const cuisines = resObj.info?.cuisines?.join(", ");
   const costForTwoMsg = resObj.info?.costForTwo;
 
   return (
@@ -18,7 +18,7 @@ const RestaurantCard = (props) => {
       />
       <h3>{name}</h3>
       <h4>{avgRating} stars</h4>
-      <h4>{cuisines}</h4>
+      <h4>{cuisines} join </h4>
       <h4>{costForTwoMsg}</h4>
       <h4>{deliveryTime} minutes</h4>
     </div>

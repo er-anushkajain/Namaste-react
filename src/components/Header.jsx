@@ -1,14 +1,14 @@
 import { LOGO_URL } from "../../utils/commom";
+import { useState } from "react";
 
 const Header = () => {
+  let btnName = "Login";
+
+  const [btnNameReact, setBtnNameReact] = useState("Login");
   return (
     <div className="Header">
       <div className="logo-container">
-        <img
-          className="logo"
-          src={LOGO_URL}
-          alt="Logo"
-        />
+        <img className="logo" src={LOGO_URL} alt="Logo" />
       </div>
       <div className="nav-items">
         <ul>
@@ -16,6 +16,16 @@ const Header = () => {
           <li>About</li>
           <li>Contact</li>
           <li>Cart</li>
+          <button
+            className="login"
+            onClick={() => {
+              btnNameReact === "Login"
+                ? setBtnNameReact("Logout")
+                : setBtnNameReact("Login");
+            }}
+          >
+            {btnNameReact}
+          </button>
         </ul>
       </div>
     </div>
