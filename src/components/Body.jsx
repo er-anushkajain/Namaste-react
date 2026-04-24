@@ -20,8 +20,7 @@ const Body = () => {
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants;
     setListOfRestaurants(res);
-    console.log(`ListOfRestaurants ${JSON.stringify(res, null, 2)}`);
-      setFilteredRestaurants(res);
+    setFilteredRestaurants(res);
   };
 
   return ListOfRestaurants.length === 0 ? (
@@ -38,15 +37,16 @@ const Body = () => {
               setSearchText(e.target.value);
             }}
           />
-          <button>
-            onClick=
-            {() => {
-              console.log(SearchText);
-              const filteredRestaurant = ListOfRestaurants.filter(
-                (res) => res.info.name.toLowerCase().includes( SearchText.toLocaleLowerCase()),
+          <button
+            onClick={() => {
+              const filteredRestaurant = ListOfRestaurants.filter((res) =>
+                res.info.name
+                  .toLowerCase()
+                  .includes(SearchText.toLocaleLowerCase()),
               );
               setFilteredRestaurants(filteredRestaurant);
-            }}{" "}
+            }}
+          >
             search
           </button>
         </div>
@@ -55,7 +55,7 @@ const Body = () => {
           className="filter-btn"
           onClick={() => {
             const filteredList = ListOfRestaurants.filter(
-              (res) => res.info.avgRating > 4.5,
+              (res) => res.info.avgRating > 4.0,
             );
             setListOfRestaurants(filteredList);
             console.log("Filtered Restaurants:", filteredList);

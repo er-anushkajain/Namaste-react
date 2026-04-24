@@ -1,6 +1,6 @@
 import { LOGO_URL } from "../../utils/commom";
 import { useState } from "react";
-
+import { Link } from "react-router";
 const Header = () => {
   let btnName = "Login";
 
@@ -12,11 +12,20 @@ const Header = () => {
       </div>
       <div className="nav-items">
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Cart</li>
-          <button
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/contact Us">Contact Us</Link>
+          </li>
+          <li>
+            <Link to="/Cart">Cart</Link>
+          </li>
+          {/* <button
             className="login"
             onClick={() => {
               btnNameReact === "Login"
@@ -25,7 +34,7 @@ const Header = () => {
             }}
           >
             {btnNameReact}
-          </button>
+          </button> */}
         </ul>
       </div>
     </div>

@@ -19,8 +19,11 @@
     "test": "jest"
   },
   "dependencies": {
+    "DOM": "^0.0.3",
     "react": "^19.2.5",
-    "react-dom": "^19.2.5"
+    "react-dom": "^19.2.5",
+    "react-router": "^7.14.2",
+    "router": "^2.2.0"
   },
   "browserlist": [
     "last 2 versions"

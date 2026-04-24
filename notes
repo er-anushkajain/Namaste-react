@@ -43,3 +43,18 @@ It shows a moving, shiny animation (like a light passing over a grey box) while 
 Shimmer UI is a fancy placeholder that shows up while your real data is loading.
 It keeps users happy by showing them something is happening, instead of just making them wait.
 * Whenever state variable update, react triggers a reconciliation cycle(re-renders the component)
+* -- if there is no dependency array useeffect is called on every render.
+* --if the dependency array is empty useEffect is called on initial render(just once)
+when we put something in dependany array it only be called when dependency will changed
+* - with the help of setRouterError we can give more information about the error to the user.
+* - Children routes-
+--Children routes let you nest pages inside other pages, so you can organize your site better and reuse layouts.
+-- for example-
+Imagine a website as a book:
+
+The main chapters are your main routes (like Home, About, Contact).
+Sometimes, a chapter has its own sections or sub-chapters. These are the children routes.
+# 2 types of routing in web apps
+
+Client-side routing = handled in the browser, no full page reloads.
+Server-side routing = handled on the server, full page reloads for each navigation.

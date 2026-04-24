@@ -2,7 +2,7 @@ import { CDN_URL } from "../../utils/commom.js";
 
 const RestaurantCard = (props) => {
   const { resObj } = props;
-  console.log("resData in RestaurantCard:", resObj.info.id);
+
   const name = resObj?.info?.name;
   const avgRating = resObj.info?.avgRating;
   const deliveryTime = resObj.info?.sla.deliveryTime;
