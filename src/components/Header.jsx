@@ -25,7 +25,7 @@ const Header = () => {
           <li>
             <Link to="/Cart">Cart</Link>
           </li>
-          {/* <button
+          <button
             className="login"
             onClick={() => {
               btnNameReact === "Login"
@@ -34,7 +34,7 @@ const Header = () => {
             }}
           >
             {btnNameReact}
-          </button> */}
+          </button>
         </ul>
       </div>
     </div>
