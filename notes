@@ -58,3 +58,17 @@ Sometimes, a chapter has its own sections or sub-chapters. These are the childre
 
 Client-side routing = handled in the browser, no full page reloads.
 Server-side routing = handled on the server, full page reloads for each navigation.
+* functional component and class based component-
+FUNCTIONAL COMPONENT-
+A functional component in React is a JavaScript function that returns React elements (JSX) to render UI. Unlike class components, functional components are simpler and do not use the class keyword. They can accept props as arguments and, with React hooks (like useState and useEffect), can manage state and side effects.
+Functional components are just functions.
+They return JSX.
+They can use hooks for state and lifecycle features.
+They are the recommended way to write components in modern React.
+* CLASS BASED COMPONENT-
+A class-based component in React is a component defined using a JavaScript ES6 class that extends React.Component. It must include a render() method that returns JSX. Class components can hold their own state and use lifecycle methods (like componentDidMount, componentDidUpdate, componentWillUnmount) to run code at specific points in the component’s life.
+Uses class syntax and extends React.Component.
+Has a render() method that returns JSX.
+Can manage state with this.state and update it with this.setState().
+Can use lifecycle methods for side effects.
+Before React hooks, class components were required for state and lifecycle logic. Now, functional components with hooks are preferred

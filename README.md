@@ -48,3 +48,9 @@ these are normal javascript function which is written by facebook developers. yo
 * there are 2 important hooks inside react
 * - useState() - this is used to generate superpowerful state variable in react
 * -useEffect()
+
+
+# Installing the prettier
+* command to install
+npm install --save-dev prettier
+

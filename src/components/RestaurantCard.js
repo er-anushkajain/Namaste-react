@@ -1,4 +1,4 @@
-import { CDN_URL } from "../../utils/commom.js";
+import { CDN_URL } from '../../utils/commom.js';
 
 const RestaurantCard = (props) => {
   const { resObj } = props;
@@ -6,7 +6,7 @@ const RestaurantCard = (props) => {
   const name = resObj?.info?.name;
   const avgRating = resObj.info?.avgRating;
   const deliveryTime = resObj.info?.sla.deliveryTime;
-  const cuisines = resObj.info?.cuisines?.join(", ");
+  const cuisines = resObj.info?.cuisines?.join(', ');
   const costForTwoMsg = resObj.info?.costForTwo;
 
   return (

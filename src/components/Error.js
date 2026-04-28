@@ -1,7 +1,5 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter } from 'react-router';
 const Error = () => {
- 
-  
   return (
     <div>
       <h1>OOPs!!!!</h1>

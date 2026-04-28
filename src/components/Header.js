@@ -1,10 +1,10 @@
-import { LOGO_URL } from "../../utils/commom";
-import { useState } from "react";
-import { Link } from "react-router";
+import { LOGO_URL } from '../../utils/commom';
+import { useState } from 'react';
+import { Link } from 'react-router';
 const Header = () => {
-  let btnName = "Login";
+  let btnName = 'Login';
 
-  const [btnNameReact, setBtnNameReact] = useState("Login");
+  const [btnNameReact, setBtnNameReact] = useState('Login');
   return (
     <div className="Header">
       <div className="logo-container">
@@ -28,9 +28,9 @@ const Header = () => {
           <button
             className="login"
             onClick={() => {
-              btnNameReact === "Login"
-                ? setBtnNameReact("Logout")
-                : setBtnNameReact("Login");
+              btnNameReact === 'Login'
+                ? setBtnNameReact('Logout')
+                : setBtnNameReact('Login');
             }}
           >
             {btnNameReact}

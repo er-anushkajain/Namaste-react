@@ -1,19 +1,20 @@
-import RestaurantCard from "./RestaurantCard";
-import { useEffect, useState } from "react";
-import reslist from "../../utils/mockdata";
-import Shimmer from "./Shimmer";
+import RestaurantCard from './RestaurantCard';
+import { useEffect, useState } from 'react';
+import reslist from '../../utils/mockdata';
+import Shimmer from './Shimmer';
+import { Link } from 'react-router';
 const Body = () => {
   const [ListOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
-  const [SearchText, setSearchText] = useState("");
+  const [SearchText, setSearchText] = useState('');
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.61&lng=77.20&page_type=DESKTOP_WEB_LISTING",
+      'https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.61&lng=77.20&page_type=DESKTOP_WEB_LISTING',
     );
     const json = await data.json();
     const res =
@@ -58,7 +59,7 @@ const Body = () => {
               (res) => res.info.avgRating > 4.0,
             );
             setListOfRestaurants(filteredList);
-            console.log("Filtered Restaurants:", filteredList);
+            console.log('Filtered Restaurants:', filteredList);
           }}
         >
           Top Rated Restaurants
@@ -67,7 +68,9 @@ const Body = () => {
 
       <div className="restaurant-container">
         {filteredRestaurants.map((restaurant) => (
-          <RestaurantCard key={restaurant?.info?.id} resObj={restaurant} />
+          <Link to={'/restaurant/' + restaurant.data.id}>
+            <RestaurantCard key={restaurant?.info?.id} resObj={restaurant} />
+          </Link>
         ))}
       </div>
     </div>
