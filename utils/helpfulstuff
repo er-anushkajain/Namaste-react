@@ -2,3 +2,10 @@ result.data.cards[5].groupedCard.cardGroupMap.REGULAR.cards[3].card
 
 result.data.cards[5].groupedCard.cardGroupMap.REGULAR.cards[1].card.card.itemCards[3].card.info
 
+foreach of :
+var res = result.data.cards[5].groupedCard.cardGroupMap.REGULAR.cards[1]
+
+then:
+res.card.card.itemCards[3].card.info
+
+import { MENU_API_URL } from '../../utils/commom';

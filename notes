@@ -71,4 +71,15 @@ Uses class syntax and extends React.Component.
 Has a render() method that returns JSX.
 Can manage state with this.state and update it with this.setState().
 Can use lifecycle methods for side effects.
-Before React hooks, class components were required for state and lifecycle logic. Now, functional components with hooks are preferred
+Before React hooks, class components were required for state and lifecycle logic. Now, functional components with hooks are preferred.
+* - SINGLE RESPONSIBILITY PRINCIPLE
+Every part of your code (like a function, class, or module) should have only one job or reason to change.
+In code, this makes programs easier to understand, test, and maintain. If you need to change how one thing works, you only have to update one place, not many.
+* -CUSTOM HOOK-
+CA custom hook in React is a way to reuse logic across different components. Think of it like a recipe: if you have a set of steps you often repeat (like fetching data, handling forms, or managing timers), you can put those steps into a custom hook. Then, whenever you need that logic, you just "call" the custom hook in your component, instead of rewriting the same code.
+Custom hooks make your code cleaner, easier to maintain, and help avoid repeating yourself.
+* - LAZY LOADING
+Lazy loading means loading something only when it’s actually needed, instead of loading everything at the very beginning.
+In React, lazy loading is often used to load components only when they are needed, making your app faster and more efficient.
+
+
