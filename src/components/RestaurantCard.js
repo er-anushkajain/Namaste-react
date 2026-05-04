@@ -14,7 +14,7 @@ const RestaurantCard = (props) => {
       <img
         src={CDN_URL + resObj.info?.cloudinaryImageId}
         alt={name}
-        className="restaurant-image"
+        className="w-24 h-24 object-cover rounded-lg"
       />
       <h3>{name}</h3>
       <h4>{avgRating} stars</h4>
